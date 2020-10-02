@@ -3,3 +3,4 @@ sqlPackage.txt
 # Datasets are too big
 Project/Fake.csv
 Project/True.csv
+*.class
