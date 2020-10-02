@@ -14,8 +14,7 @@
 *		Find the closure of (AC)+
 *
 *	run: 	java ClosureOfAttributes DependencyFile.txt AC
-*	output: ABCDE
-*		this means (AC)+ = {A, B, C, D, E}
+*	output: (AC)+ - {ABCDE}
 */
 
 import java.io.File;
