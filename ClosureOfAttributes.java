@@ -52,7 +52,7 @@ public class ClosureOfAttributes {
 		try {
 			in = new Scanner(new File(filename));
 		}catch(FileNotFoundException e) {
-			System.out.println(filename + " not found");
+			System.out.println("File: <" + filename + "> not found");
 			return;
 		}
 
