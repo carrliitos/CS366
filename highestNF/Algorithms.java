@@ -77,6 +77,7 @@ public class Algorithms {
 		if(ret != 0) {
 			System.out.printf("The highest normal form that the relation satisfies is 1NF.\n");
 			System.out.printf("Decomposing to 2NF.\n");
+			System.out.printf("------------------------------\n");
 		}else return true;
 
 		List<Relation> drel = new ArrayList<>();
@@ -143,6 +144,7 @@ public class Algorithms {
 		if(not3NF.size() != 0) {
 			System.out.printf("The highest normal form that the relation satisifes is 2NF.\n");
 			System.out.printf("Decomposing to 3NF.\n");
+			System.out.printf("------------------------------\n");
 		}else return true;
 
 		List<FD> not2NFb = new ArrayList<>();
@@ -200,6 +202,7 @@ public class Algorithms {
 		if(notBCNF.size() != 0) {
 			System.out.printf("The highest normal form that the relation satisfies is 3NF.\n");
 			System.out.printf("Decomposing to make it BCNF.\n");
+			System.out.printf("------------------------------\n");
 		}else return true;
 
 		List<FD> not2NFb = new ArrayList<>();
