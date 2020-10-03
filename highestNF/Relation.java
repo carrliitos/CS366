@@ -67,7 +67,7 @@ public final class Relation {
 		StringBuilder sb = new StringBuilder();
 		// sb.append("Relation: ");
 		// sb.append(attributes.toString());
-		sb.append("Relation: ( " + attributes.toString() + ")");
+		sb.append("\nRelation: ( " + attributes.toString() + ")");
 		sb.append('\n');
 
 		if(allKeyCandidates != null) {
