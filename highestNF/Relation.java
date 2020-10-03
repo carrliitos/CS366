@@ -71,7 +71,7 @@ public final class Relation {
 		sb.append('\n');
 
 		if(allKeyCandidates != null) {
-			sb.append("Keys: ");
+			sb.append("Found candidate keys: ");
 			sb.append('\n');
 			for (AttributeSet key : allKeyCandidates) {
 				// sb.append("{");
@@ -81,7 +81,7 @@ public final class Relation {
 				sb.append('\n');
 			}
 		}else {
-			sb.append("Keys are NULL.\n");
+			sb.append("Candidate keys are NULL.\n");
 		}
 		if(fds != null) {
 			for (FD fd : fds) {
