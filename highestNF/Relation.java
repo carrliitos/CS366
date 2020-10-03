@@ -65,17 +65,22 @@ public final class Relation {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Relation: ");
-		sb.append(attributes.toString());
+		// sb.append("Relation: ");
+		// sb.append(attributes.toString());
+		sb.append("Relation: ( " + attributes.toString() + ")");
 		sb.append('\n');
 
 		if(allKeyCandidates != null) {
-			sb.append("Keys:");
+			sb.append("Keys: ");
+			sb.append('\n');
 			for (AttributeSet key : allKeyCandidates) {
-				sb.append(key.toString());
+				// sb.append("{");
+				// sb.append(key.toString());
+				// sb.append("}");
+				sb.append("{ " + key.toString() + "}");
 				sb.append('\n');
 			}
-		} else {
+		}else {
 			sb.append("Keys are NULL.\n");
 		}
 		if(fds != null) {
