@@ -65,7 +65,7 @@ public final class Relation {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Relation : ");
+		sb.append("Relation: ");
 		sb.append(attributes.toString());
 		sb.append('\n');
 

@@ -56,7 +56,7 @@ public final class FD {
 	}
 
 	public String toString() {
-		return leftHandSide.toString() + "-> " + rightHandSide.toString();
+		return leftHandSide.toString() + "--> " + rightHandSide.toString();
 	}
 
 	public FD clone() {
