@@ -25,30 +25,30 @@ public final class DomainTable {
 		index = i;
 	}
 
-	public void setNewNames(List<String> names) {
-		if (names == null) {
-			return;
-		}
-		attNames.clear();
-		attIndices.clear();
-		int i = 0;
-		int val = 0;
-		for (; i < names.size(); i++) {
-			val = 1 << i;
-			attNames.add(names.get(i));
-			attIndices.add(val);
-		}
-		index = i;
-		notifyListeners();
-	}
-	public void addListener(DomainTableListener l) {
-		if(l != null)
-			listeners.add(l);
-	}
-	public void removeListener(DomainTableListener l) {
-		if(l != null)
-			listeners.remove(l);
-	}
+	// public void setNewNames(List<String> names) {
+	// 	if (names == null) {
+	// 		return;
+	// 	}
+	// 	attNames.clear();
+	// 	attIndices.clear();
+	// 	int i = 0;
+	// 	int val = 0;
+	// 	for (; i < names.size(); i++) {
+	// 		val = 1 << i;
+	// 		attNames.add(names.get(i));
+	// 		attIndices.add(val);
+	// 	}
+	// 	index = i;
+	// 	notifyListeners();
+	// }
+	// public void addListener(DomainTableListener l) {
+	// 	if(l != null)
+	// 		listeners.add(l);
+	// }
+	// public void removeListener(DomainTableListener l) {
+	// 	if(l != null)
+	// 		listeners.remove(l);
+	// }
 
 	public boolean addAtt(char attName) {
 		if(index >= 32) return false;
@@ -74,34 +74,34 @@ public final class DomainTable {
 		return false;
 	}
 
-	public void loadDomainTable(DomainTable that) {
-		attNames.clear();
-		attIndices.clear();
-		index = 0;
-		this.attNames = that.attNames;
-		this.attIndices = that.attIndices;
-		this.index = that.index;
-		notifyListeners();
-	}
+	// public void loadDomainTable(DomainTable that) {
+	// 	attNames.clear();
+	// 	attIndices.clear();
+	// 	index = 0;
+	// 	this.attNames = that.attNames;
+	// 	this.attIndices = that.attIndices;
+	// 	this.index = that.index;
+	// 	notifyListeners();
+	// }
 
-	public void clearData() {
-		attNames.clear();
-		attIndices.clear();
-		index = 0;
-		notifyListeners();
-	}
+	// public void clearData() {
+	// 	attNames.clear();
+	// 	attIndices.clear();
+	// 	index = 0;
+	// 	notifyListeners();
+	// }
 
-	public boolean renameAtt(String oldAttName, String newAttName) {
-		if(index < 1) return false;
-		int i = indexNameCaseInsensitive(oldAttName);
-		if(i >= 0) {
-			attNames.remove(i);
-			attNames.add(i, newAttName);
-			notifyListeners();
-			return true;
-		}
-		return false;
-	}
+	// public boolean renameAtt(String oldAttName, String newAttName) {
+	// 	if(index < 1) return false;
+	// 	int i = indexNameCaseInsensitive(oldAttName);
+	// 	if(i >= 0) {
+	// 		attNames.remove(i);
+	// 		attNames.add(i, newAttName);
+	// 		notifyListeners();
+	// 		return true;
+	// 	}
+	// 	return false;
+	// }
 
 	public int getAttIndex(char name) {
 		int i = indexNameCaseInsensitive(name);
@@ -182,12 +182,12 @@ public final class DomainTable {
 		return -1;
 	}
 
-	private boolean containsNameCanseInsensitive(String name) {
-		return indexNameCaseInsensitive(name) != -1;
-	}
-	private void notifyListeners() {
-		for (DomainTableListener l : listeners) {
-			l.onDomainChange();
-		}
-	}
+	// private boolean containsNameCanseInsensitive(String name) {
+	// 	return indexNameCaseInsensitive(name) != -1;
+	// }
+	// private void notifyListeners() {
+	// 	for (DomainTableListener l : listeners) {
+	// 		l.onDomainChange();
+	// 	}
+	// }
 }

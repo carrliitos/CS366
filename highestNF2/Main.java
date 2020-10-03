@@ -26,7 +26,7 @@ public class Main {
 
 			DomainTable xyz = new DomainTable(att);
 			Relation rel = new Relation(new AttributeSet(xyz, att));
-			System.out.println(rel);
+			// System.out.println(rel);
 			System.out.println("Enter functional dependencies (ie, AB>C), q to quit: ");
 			String f = null;
 			int counter = 0;
@@ -51,8 +51,8 @@ public class Main {
 					}else rhs += f.charAt(i);
 				}
 
-				if(lhs.length( == 0 || rhs.length() == 0)) {
-					System.out.printl("Invalid Functional Dependencies");
+				if(lhs.length() == 0 || rhs.length() == 0) {
+					System.out.println("Invalid Functional Dependencies");
 					continue;
 				}
 
@@ -75,7 +75,7 @@ public class Main {
 			allKeyCandidatesm = Algorithms.findAllCandidateKeys(rel.fds, rel.attributes);
 			rel.setKeyCandidates(allKeyCandidatesm);
 			rel.primaryKey = rel.allKeyCandidates.get(0);
-			System.out.println("rel");
+			System.out.println(rel);
 
 			if(Algorithms.isIn2NF(rel) == false) return;
 			else if(Algorithms.isIn3NF(rel) == false) return;

@@ -43,13 +43,13 @@ public class Algorithms {
 	}
 
 	public static AttributeSet attributeClosure(AttributeSet a, List<FD> fds) {
-		attributeSet r = a.clone();
+		AttributeSet r = a.clone();
 		int lastAtts;
 		
 		do{
 			lastAtts = r.attMask();
 			for(FD fd : fds) {
-				if(fd.getLHS().isSubsetOf(r)) {
+				if(fd.getLHS().isSubSetOf(r)) {
 					r.union(fd.getRHS());
 				}
 			}
@@ -75,8 +75,8 @@ public class Algorithms {
 
 		int ret = not2NF.size();
 		if(ret != 0) {
-			System.out.printf("The highest normal form that the relation satisfies is 1NF\n");
-			System.out.printf("Decomposing to 2NF\n");
+			System.out.printf("The highest normal form that the relation satisfies is 1NF.\n");
+			System.out.printf("Decomposing to 2NF.\n");
 		}else return true;
 
 		List<Relation> drel = new ArrayList<>();
@@ -108,7 +108,7 @@ public class Algorithms {
 
 		drel.add(relc);
 		for(Relation r : drel) {
-			List<AttributeSet> allKeyCandidates;
+			List<AttributeSet> allKeyCandidatesm;
 			allKeyCandidatesm = Algorithms.findAllCandidateKeys(r.fds, r.attributes);
 			r.setKeyCandidates(allKeyCandidatesm);
 			r.primaryKey = r.allKeyCandidates.get(0);
@@ -118,7 +118,7 @@ public class Algorithms {
 		return false;
 	}
 
-	public boolean isIn3NF(Relation rel) {
+	public static boolean isIn3NF(Relation rel) {
 		List<FD> fd3NF = rel.fds;
 		List<FD> not3NF = new ArrayList<>();
 		List<Relation> drel = new ArrayList<>();
@@ -166,7 +166,7 @@ public class Algorithms {
 			r.setAttributes(x);
 
 			List<FD> fdsm = new ArrayList<>();
-			fdsm.add(fdsm);
+			fdsm.add(f);
 			r.setFDs(fdsm);
 			drel.add(r);
 		}
@@ -176,7 +176,7 @@ public class Algorithms {
 			allKeyCandidatesm = Algorithms.findAllCandidateKeys(r.fds, r.attributes);
 			r.setKeyCandidates(allKeyCandidatesm);
 			r.primaryKey = r.allKeyCandidates.get(0);
-			System.out.printlf(r);
+			System.out.println(r);
 		}
 		return false;
 	}
@@ -199,7 +199,7 @@ public class Algorithms {
 
 		if(notBCNF.size() != 0) {
 			System.out.printf("The highest normal form that the relation satisfies is 3NF.\n");
-			System.out.printf("Decomposing to make it BCNF.");
+			System.out.printf("Decomposing to make it BCNF.\n");
 		}else return true;
 
 		List<FD> not2NFb = new ArrayList<>();
