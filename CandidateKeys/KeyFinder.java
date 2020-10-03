@@ -25,9 +25,9 @@ public class KeyFinder {
             }
         });
 
-//        System.out.println("All Combination: " + combinationList);
-//        System.out.println("FDs: " + fdMap);
-//        System.out.println("Atts: " + attributeList);
+       // System.out.println("All Combination: " + combinationList);
+       // System.out.println("FDs: " + fdMap);
+       // System.out.println("Atts: " + attributeList);
         for (String combinationItem : combinationList) {
             boolean stop = false;
             for (String ignore : ignoreList) {
@@ -62,8 +62,8 @@ public class KeyFinder {
                 }
             } while (true);
 
-            //System.out.println("Input: "+ atts);
-            //System.out.println("Closure(Input): "+theClosure);
+            System.out.println("Input: "+ atts);
+            System.out.println("Closure(Input): "+theClosure);
             if (theClosure.containsAll(attributeList)) {
                 //System.out.println("=============> Key: " + combinationItem);
                 keys.add(combinationItem);
