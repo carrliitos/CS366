@@ -1,3 +1,7 @@
+/* @author Benzon Carlitos Salazar
+*	CS366 - DBMS
+*/
+
 import java.util.ArrayList;
 import java.util.List;
 
