@@ -180,4 +180,64 @@ public class Algorithms {
 		}
 		return false;
 	}
+
+	public static boolean isInBCNF(Relation rel) {
+		List<FD> fdBCNF = rel.fds;
+		List<FD> notBCNF = new ArrayList<>();
+		List<Relation> drel = new ArrayList<>();
+		Relation relc = rel.clone();
+		for(FD f : fdBCNF) {
+			if(rel.allKeyCandidates.contains(f.getLHS())) continue;
+			else {
+				relc.fds.remove(f);
+				AttributeSet x = f.getRHS().clone();
+				x.removeAttSet(f.getLHS());
+				relc.attributes.removeAttSet(x);
+				notBCNF.add(f);
+			}
+		}
+
+		if(notBCNF.size() != 0) {
+			System.out.printf("The highest normal form that the relation satisfies is 3NF.\n");
+			System.out.printf("Decomposing to make it BCNF.");
+		}else return true;
+
+		List<FD> not2NFb = new ArrayList<>();
+		not2NFb.addAll(notBCNF);
+
+		int m = 0;
+		for(FD f : not2NFb) {
+			m = (m | f.getRHS().attMask);
+		}
+
+		for(FD f : fdBCNF) {
+			if((f.getRHS().attMask & m) != 0) {
+				if(relc.fds.contains(f)) relc.fds.remove(f);
+			}else if((f.getLHS().attMask & m) != 0) {
+				if(relc.fds.contains(f)) relc.fds.remove(f);
+			}
+		}
+
+		drel.add(relc);
+		for(FD f : notBCNF) {
+			Relation r = new Relation();
+			AttributeSet x =  f.getLHS().clone();
+			x.union(f.getRHS());
+			r.setAttributes(x);
+
+			List<FD> fdsm = new ArrayList<>();
+			fdsm.add(f);
+			r.setFDs(fdsm);
+			drel.add(r);
+		}
+
+		for(Relation r : drel) {
+			List<AttributeSet> allKeyCandidatesm;
+			allKeyCandidatesm = Algorithms.findAllCandidateKeys(r.fds, r.attributes);
+			r.setKeyCandidates(allKeyCandidatesm);
+			r.primaryKey = r.allKeyCandidates.get(0);
+			System.out.println(r);
+		}
+		return false;
+	}
 }
