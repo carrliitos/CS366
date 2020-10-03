@@ -63,12 +63,11 @@ public class KeyFinder {
             } while (true);
 
             System.out.println("Input: "+ atts);
-            System.out.println("Closure(Input): "+theClosure);
-            if (theClosure.containsAll(attributeList)) {
-                //System.out.println("=============> Key: " + combinationItem);
+            System.out.println("    " + atts + "+ = " + theClosure);
+            if(theClosure.containsAll(attributeList)) {
+                System.out.println("=============> Key: " + combinationItem);
                 keys.add(combinationItem);
                 ignoreList.add(combinationItem);
-
             }
         }
         return keys;

@@ -43,7 +43,7 @@ public class Main {
 
             KeyFinder KF = new KeyFinder();
             Scanner commandLine = new Scanner(System.in);
-            System.out.println("======> Key Finder Project <======");
+            System.out.println("======> Key Finder <======");
 
             do {
                 System.out.print("Enter the attributes as: A,B,... or Type Exit: ");
