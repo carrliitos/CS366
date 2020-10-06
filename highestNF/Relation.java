@@ -72,7 +72,6 @@ public final class Relation {
 
 		if(allKeyCandidates != null) {
 			sb.append("Found candidate keys: ");
-			sb.append('\n');
 			for (AttributeSet key : allKeyCandidates) {
 				// sb.append("{");
 				// sb.append(key.toString());
