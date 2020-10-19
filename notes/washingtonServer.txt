@@ -1,4 +1,0 @@
-VPN: vpn.uww.edu
-Server: washington.uww.edu
-Login: salazarbc24@washington.uww.edu
-Password: 77phdH6gv8pfy!
