@@ -1,0 +1,2 @@
+$ mysql -u salazarbc -p
+password = bs0288
