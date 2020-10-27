@@ -1,5 +1,6 @@
-ABCD
-AB C
-AB D
-C A
-D B
+ABCGHI
+A B
+A C
+CG H
+CG I
+B H
