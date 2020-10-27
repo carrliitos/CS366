@@ -75,7 +75,7 @@ public class Algorithms {
 
 		int ret = not2NF.size();
 		if(ret != 0) {
-			System.out.printf("The highest Normal Form that the relation satisfies is 1NF.\n");
+			System.out.printf("The best Normal Form that the relation satisfies is 1NF.\n");
 			System.out.printf("Decomposing to 2NF.\n");
 			System.out.printf("------------------------------\n");
 		}else return true;
@@ -142,7 +142,7 @@ public class Algorithms {
 		}
 
 		if(not3NF.size() != 0) {
-			System.out.printf("The highest Normal Form that the relation satisifes is 2NF.\n");
+			System.out.printf("The best Normal Form that the relation satisifes is 2NF.\n");
 			System.out.printf("Decomposing to 3NF.\n");
 			System.out.printf("------------------------------\n");
 		}else return true;
@@ -200,7 +200,7 @@ public class Algorithms {
 		}
 
 		if(notBCNF.size() != 0) {
-			System.out.printf("The highest Normal Form that the relation satisfies is 3NF.\n");
+			System.out.printf("The best Normal Form that the relation satisfies is 3NF.\n");
 			System.out.printf("Decomposing to make it BCNF.\n");
 			System.out.printf("------------------------------\n");
 		}else return true;
