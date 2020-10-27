@@ -8,13 +8,18 @@ $ java ClosureOfAttributes <dependency text file> <closure set you want>
 - Closure set is whatever closure set you are looking for
 
 ## Example
-Example: Given the relation R(ABCDE) with FDs {A->B, CD->E, AC->D}
-		dependencyfile.txt will have
+- Example: Given the relation R(ABCDE) with FDs {A->B, CD->E, AC->D}
+- dependencyfile.txt will have
+
+```
 			ABCDE
 			A B
 			CD E
 			AC D
-		Find the closure of (AC)+
+```
+
+- Find the closure of (AC)+
+
 ```
 $ java ClosureOfAttributes dependencyfile.txt AC
 $ (AC)+ = {ABCDE}
