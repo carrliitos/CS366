@@ -1,6 +1,5 @@
-ABCGHI
-A B
-A C
-CG H
-CG I
-B H
+GHIJ
+G H
+HI J
+G I
+

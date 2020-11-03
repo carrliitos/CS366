@@ -2,7 +2,7 @@ CREATE TABLE Student(snum BIGINT,
 				sname VARCHAR(50),
 				major VARCHAR(50),
 				level CHAR(2),
-				age int,
+				age INT,
 				PRIMARY KEY (snum));
 
 CREATE TABLE ENROLL(snum BIGINT,
