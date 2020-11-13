@@ -43,8 +43,7 @@ public class SimpleStoreProcedureDemo {
 		myCallStmt.registerOutParameter(1,Types.BIGINT);
 		myCallStmt.execute();
 		total = myCallStmt.getInt(1);
-		System.out.println("The total student ="+ total);
-
+		System.out.println("The total Faculty ="+ total);
 	}
 	catch (SQLException e) {
 		e.printStackTrace();
@@ -60,20 +59,25 @@ begin
 	  select count(*) into total
 	  from student;
 end $$
-delimiter ; 
+delimiter; 
+
+delimiter $$
+drop procedure if exists getFacultyNumber;
+create procedure getFacultyNumber(INOUT total int)
+begin 
+	  select count(*) into total
+	  from Faculty
+end $$
+delimiter;
 
 */
-	
-	
-public static void main(String args[]) {
 
+
+public static void main(String args[]) {
 	SimpleStoreProcedureDemo demoObj = new SimpleStoreProcedureDemo();
 	demoObj.Connection();
-	String spName ="getTotalStudent";
+	// String spName ="getTotalStudent";
+	String spName = "getFacultyNumber";
 	demoObj.simpleStoreProcedure(spName);
 }
-
-
-
 }
-

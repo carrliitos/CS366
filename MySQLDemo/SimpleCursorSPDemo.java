@@ -1,5 +1,3 @@
-package MySQLDemo;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -27,10 +25,10 @@ public class SimpleCursorSPDemo {
 			System.out.println("Successfully connected to the database");
 		}
 		catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			System.out.println("ClassNotFoundException: " + e.getMessage());
 		}
 		catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("SQLException: " + e.getMessage());
 		}
 	} // end of Connection
 
@@ -47,7 +45,7 @@ public class SimpleCursorSPDemo {
 		System.out.println("The student names are : \n"+listName);
 	}
 	catch (SQLException e) {
-		e.printStackTrace();
+		System.out.println("SQLException: " + e.getMessage());
 	}
 } // end of simpleQuery method
 

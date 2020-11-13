@@ -11,7 +11,7 @@ public class ConnectionDemo {
 	static final String hostName ="washington.uww.edu"; //140.146.23.39 or washington.uww.edu
 	static final String databaseURL ="jdbc:mariadb://" + hostName + "/" + databasePrefix;
 	static final String password="bs0288"; // please enter your own password
-		
+
 	public static void main(String args[]) {
 		Connection connection = null;
 		Statement statement = null;
